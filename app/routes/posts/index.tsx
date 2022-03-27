@@ -1,16 +1,16 @@
-import { json, Link, useLoaderData } from "remix";
+import { json, Link, useLoaderData } from 'remix'
 
-import { getPosts } from "~/post";
-import type { Post } from "~/post";
+import { getPosts } from '~/post'
+import type { Post } from '~/post'
 
 export const loader = async () => {
   const result = await getPosts()
-  return json(result);
-};
+  return json(result)
+}
 
 export default function Posts() {
-  const posts = useLoaderData<Post[]>();
-  console.log(posts);
+  const posts = useLoaderData<Post[]>()
+  console.log(posts)
 
   return (
     <main>
@@ -23,5 +23,5 @@ export default function Posts() {
         ))}
       </ul>
     </main>
-  );
+  )
 }
